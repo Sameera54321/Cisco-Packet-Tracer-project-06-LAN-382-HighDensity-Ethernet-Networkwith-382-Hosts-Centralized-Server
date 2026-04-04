@@ -1,0 +1,2 @@
+# Cisco-Packet-Tracer-project-06-LAN-382-HighDensity-Ethernet-Networkwith-382-Hosts-Centralized-Server
+I’m pleased to share my latest networking project – LAN‑382 – a Cisco Packet Tracer simulation that models a high‑density local area network with 382 end devices (IP addresses 10.10.10.1 – 10.10.10.382), all connected through a single Cisco 2960‑24TT switch alongside a dedicated server (Server0).
