@@ -1,0 +1,99 @@
+en
+conf t
+
+int vlan 30
+ip addr 192.168.3.2 255.255.255.248
+ip helper-address 192.168.0.4
+standby 4 ip 192.168.3.1
+standby 4 priority 110
+standby 4 preempt
+
+ex
+
+int vlan 40
+ip addr 192.168.4.2 255.255.255.248
+ip helper-address 192.168.0.4
+standby 5 ip 192.168.4.1
+standby 5 priority 110
+standby 5 preempt
+
+ex
+
+
+ip routing
+
+do wr
+
+
+
+
+
+
+en
+conf t
+
+int vlan 30
+ip addr 192.168.3.3 255.255.255.248
+ip helper-address 192.168.0.4
+standby 4 ip 192.168.3.1
+standby 4 priority 100
+standby 4 preempt
+
+ex
+
+int vlan 40
+ip addr 192.168.4.3 255.255.255.248
+ip helper-address 192.168.0.4
+standby 5 ip 192.168.4.1
+standby 5 priority 100
+standby 5 preempt
+
+ex
+
+
+ip routing
+
+do wr
+
+
+
+
+
+
+
+en
+conf t
+router ospf 6
+
+
+network 192.168.0.0 0.0.0.7 area 0
+network 192.168.1.0 0.0.0.7 area 0
+network 192.168.2.0 0.0.0.7 area 0
+network 192.168.3.0 0.0.0.7 area 0
+network 192.168.4.0 0.0.0.7 area 0
+
+
+network 10.10.10.0 0.0.0.3 area 0
+network 10.10.10.4 0.0.0.3 area 0
+
+network 10.10.100.0 0.0.0.3 area 0
+
+network 10.10.20.0 0.0.0.3 area 0
+network 10.10.20.4 0.0.0.3 area 0
+
+
+do wr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
